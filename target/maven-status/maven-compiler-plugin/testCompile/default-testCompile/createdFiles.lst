@@ -1,0 +1,4 @@
+org\example\pages\RegisterPage.class
+org\example\Definitions\RegisterStepDefinition.class
+org\example\testRunner\Runners.class
+org\example\Definitions\Setup.class
