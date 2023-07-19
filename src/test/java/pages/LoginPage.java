@@ -1,40 +1,36 @@
 package pages;
 
 //import org.example.Definitions.Setup;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import tests.BaseTest;
 
-public class LoginPage extends BaseTest {
+public class LoginPage extends BasePage {
+    WebElement email = driver.findElement(By.xpath("//*[@id=\"Email\"]"));
+    WebElement password = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
+    WebElement loginButton = driver.findElement(By.xpath("/html[1]/body[1]/div[6]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/form[1]/input[1]"));
 
- public  void  going (){
-     webDriver.navigateTo();
- }
 
     public void clickLoginButton1() throws InterruptedException {
-        Thread.sleep(4000);
-        WebElement loginButton = webDriver.getWebDriver().findElement(By.cssSelector(".ico-login"));
+        WebElement loginButton = driver.findElement(By.cssSelector(".ico-login"));
         loginButton.click();
 
     }
-    public WebElement enter_Email1()
-    {
-        return webDriver.getWebDriver().findElement(By.xpath("//*[@id=\"Email\"]"))/**/;
+
+
+    public void login() {
+        email.sendKeys("beeeb123@beeeeb.com");
+        password.sendKeys("asd123");
+        loginButton.click();
+
     }
 
-    public WebElement enter_Password1()
-    {
-        return  webDriver.getWebDriver().findElement(By.xpath("//*[@id=\"Password\"]"));
-    }
 
-    public  WebElement click_Final_Login1()
-    {
-        return webDriver.getWebDriver().findElement(By.cssSelector(".login-button"));
-    }
-    public WebElement get_login_validation1(){
+    public WebElement get_login_validation1() {
 
 
-        WebElement buttonlist = webDriver.getWebDriver().findElement(By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a"));
+        WebElement buttonlist = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a"));
         /* Actions actions = new Actions(Setup.d);
          actions.moveToElement(buttonlist).perform();*/
 
@@ -47,8 +43,6 @@ public class LoginPage extends BaseTest {
 //        return Setup.d.findElement(By.cssSelector(".message-error"));
 //    }
 //
-
-
 
 
 }
